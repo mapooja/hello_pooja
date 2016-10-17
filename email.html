@@ -1,0 +1,573 @@
+<!doctype html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Npr Training</title>
+	  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro" rel="stylesheet">
+	  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <style>
+      /* -------------------------------------
+          GLOBAL RESETS
+      ------------------------------------- */
+      img {
+        border: none;
+        -ms-interpolation-mode: bicubic;
+        max-width: 100%; }
+      body {
+        background-color: #f6f6f6;
+        font-family: sans-serif;
+        -webkit-font-smoothing: antialiased;
+        font-size: 14px;
+        line-height: 1.4;
+        margin: 0;
+        padding: 0;
+        -ms-text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%; }
+      table {
+        border-collapse: separate;
+        mso-table-lspace: 0pt;
+        mso-table-rspace: 0pt;
+        width: 100%; }
+        table td {
+          font-family: sans-serif;
+          font-size: 14px;
+          vertical-align: top; }
+      /* -------------------------------------
+          BODY & CONTAINER
+      ------------------------------------- */
+      .body {
+        background-color: #f6f6f6;
+        width: 100%; }
+      /* Set a max-width, and make it display as block so it will automatically stretch to that width, but will also shrink down on a phone or something */
+      .container {
+        display: block;
+        Margin: 0 auto !important;
+        /* makes it centered */
+        max-width: 580px;
+        padding: 10px;
+        width: auto !important;
+        width: 580px; }
+      /* This should also be a block element, so that it will fill 100% of the .container */
+      .content {
+        box-sizing: border-box;
+        display: block;
+        Margin: 0 auto;
+        max-width: 580px;
+        padding: 10px; }
+      /* -------------------------------------
+          HEADER, FOOTER, MAIN
+      ------------------------------------- */
+      .main {
+        background: #fff;
+        border-radius: 3px;
+        width: 100%; border: 1px solid hsla(0, 0%, 86%, 0.48);
+      font-fmaily:Lato;}
+      .wrapper {
+        box-sizing: border-box;
+        /*padding: 20px;*/ }
+      .footer {
+        clear: both;
+        padding-top: 10px;
+        text-align: center;
+        width: 100%; }
+        .footer td,
+        .footer p,
+        .footer span,
+        .footer a {
+          color: #999999;
+          font-size: 12px;
+          text-align: center; }
+      /* -------------------------------------
+          TYPOGRAPHY
+      ------------------------------------- */
+      h1,
+      h2,
+      h3,
+      h4 {
+        color: #000000;
+        /*font-family: sans-serif;*/
+        font-family:Lato;
+        font-weight: 400;
+        line-height: 1.4;
+        margin: 0;
+        Margin-bottom: 30px; }
+      h1 {
+        font-size: 35px;
+        font-weight: 300;
+        text-align: center;
+        text-transform: capitalize; }
+      p,
+      ul,
+      ol {
+        font-family: sans-serif;
+        font-size: 14px;
+        font-weight: normal;
+        margin: 0;
+        Margin-bottom: 15px; }
+        p li,
+        ul li,
+        ol li {
+          /*list-style-position: inside;*/
+          list-style-position:outside;
+          margin-left: 5px; }
+      a {
+        color: #3498db;
+        text-decoration: underline;font-family:Lato; }
+      /* -------------------------------------
+          BUTTONS
+      ------------------------------------- */
+      .btn {
+        box-sizing: border-box;
+        width: 100%; }
+        .btn > tbody > tr > td {
+          padding-bottom: 15px; }
+        .btn table {
+          width: auto; }
+        .btn table td {
+          background-color: #ffffff;
+          border-radius: 2px;
+          text-align: center; }
+        .btn a {
+          background-color: #ffffff;
+          border: solid 1px #3498db;
+          border-radius: 2px;
+          box-sizing: border-box;
+          color: #3498db;
+          cursor: pointer;
+          display: inline-block;
+          font-size: 14px;
+          font-weight: bold;
+          margin: 0;
+          padding: 12px 25px;
+          text-decoration: none;
+          text-transform: capitalize; }
+      .btn-primary table td {
+        /*background-color: #3498db;*/
+        background-color:transparent !important; }
+      .btn-primary a {
+        /*background-color: #3498db;
+        border-color: #3498db;
+        color: #ffffff;*/
+        background-color: #ffffff;
+	    border-color: #ffffff;
+	    color: #26ba62;
+	    text-transform: uppercase;
+	    font-family:Lato;}
+      /* -------------------------------------
+          OTHER STYLES THAT MIGHT BE USEFUL
+      ------------------------------------- */
+      .last {
+        margin-bottom: 0; }
+      .first {
+        margin-top: 0; }
+      .align-center {
+        text-align: center; }
+      .align-right {
+        text-align: right; }
+      .align-left {
+        text-align: left; }
+      .clear {
+        clear: both; }
+      .mt0 {
+        margin-top: 0; }
+      .mb0 {
+        margin-bottom: 0; }
+      .preheader {
+        color: transparent;
+        display: none;
+        height: 0;
+        max-height: 0;
+        max-width: 0;
+        opacity: 0;
+        overflow: hidden;
+        mso-hide: all;
+        visibility: hidden;
+        width: 0; }
+      .powered-by a {
+        text-decoration: none; }
+      hr {
+        border: 0;
+        border-bottom: 1px solid #f6f6f6;
+        Margin: 20px 0; }
+      /* -------------------------------------
+          RESPONSIVE AND MOBILE FRIENDLY STYLES
+      ------------------------------------- */
+      @media only screen and (max-width: 620px) {
+        table[class=body] h1 {
+          font-size: 28px !important;
+          margin-bottom: 10px !important; }
+        table[class=body] p,
+        /*table[class=body] ul,
+        table[class=body] ol,*/
+        table[class=body] th,
+       /* table[class=body] span,*/
+        table[class=body] a {
+          font-size: 16px !important; 
+          max-width: 250px !important;}
+        table[class=body] .wrapper,
+        table[class=body] .article {
+          /*padding: 10px !important;*/
+          max-width: 250px !important; }
+        table[class=body] .content {
+          padding: 0 !important; }
+        table[class=body] .container {
+          padding: 0 !important;
+          width: 100% !important; }
+        table[class=body] .main {
+          border-left-width: 0 !important;
+          border-radius: 0 !important;
+          border-right-width: 0 !important; }
+        table[class=body] .btn table {
+          width: 100% !important; }
+        table[class=body] .btn a {
+          width: 100% !important; }
+        table[class=body] .img-responsive {
+          height: auto !important;
+          max-width: 100% !important;
+          width: auto !important; }
+        table[class=body] p li, ul li, ol li{
+          max-width: 70px !important;
+          font-size: 11px;
+          padding-left: 0px !important;
+          margin-left: 0px;
+            }
+        table[class=body] span a,{
+          font-size: 10px;
+          max-width: 70px !important;
+
+        }
+        }
+      /* -------------------------------------
+          PRESERVE THESE STYLES IN THE HEAD
+      ------------------------------------- */
+      @media all {
+        .ExternalClass {
+          width: 100%; }
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+          line-height: 100%; }
+        .apple-link a {
+          color: inherit !important;
+          font-family: inherit !important;
+          font-size: inherit !important;
+          font-weight: inherit !important;
+          line-height: inherit !important;
+          text-decoration: none !important; }
+     
+        .table-range{font-size: 8px;
+                   max-width: 70px !important;
+                   padding: 1px !important;
+                   padding-left: 0px !important;}
+        .web-title .web-details{
+                   font-size: 10px !important;
+                   max-width: 70px !important;
+                   padding-left: 5px !important;
+                   padding-right: 5px !important;
+                   text-align: center;
+        }          
+    }
+
+    /** custom css with low width*/
+    @media only screen and (max-width: 540px) and (max-width: 320px) {
+        table[class=body] h1 {
+          font-size: 28px !important;
+          margin-bottom: 10px !important; }
+        table[class=body] p,
+        /*table[class=body] ul,
+        table[class=body] ol,*/
+        table[class=body] th,
+       /* table[class=body] span,*/
+        table[class=body] a {
+          font-size: 16px !important; 
+          max-width: 250px !important;}
+        table[class=body] .wrapper,
+        table[class=body] .article {
+          /*padding: 10px !important;*/
+          max-width: 250px !important; }
+        table[class=body] .content {
+          padding: 0 !important; }
+        table[class=body] .container {
+          padding: 0 !important;
+          width: 100% !important; }
+        table[class=body] .main {
+          border-left-width: 0 !important;
+          border-radius: 0 !important;
+          border-right-width: 0 !important; }
+        table[class=body] .btn table {
+          width: 100% !important; }
+        table[class=body] .btn a {
+          width: 100% !important; }
+        table[class=body] .img-responsive {
+          height: auto !important;
+          max-width: 100% !important;
+          width: auto !important; }
+        table[class=body] p li, ul li, ol li{
+          max-width: 70px !important;
+          font-size: 10px;
+          padding-left: 0px !important;
+          margin-left: 0px !important;
+            }
+        table[class=body] span a,{
+          font-size: 10px;
+          max-width: 70px !important;
+
+        }
+        }
+      /* -------------------------------------
+          PRESERVE THESE STYLES IN THE HEAD
+      ------------------------------------- */
+      @media all {
+        .ExternalClass {
+          width: 100%; }
+        .ExternalClass,
+        .ExternalClass p,
+        .ExternalClass span,
+        .ExternalClass font,
+        .ExternalClass td,
+        .ExternalClass div {
+          line-height: 100%; }
+        .apple-link a {
+          color: inherit !important;
+          font-family: inherit !important;
+          font-size: inherit !important;
+          font-weight: inherit !important;
+          line-height: inherit !important;
+          text-decoration: none !important; }
+     
+        .table-range{font-size: 8px;
+                   max-width: 70px !important;
+                   padding: 1px !important;
+                   padding-left: 0px !important;}
+        .web-title .web-details{
+                   font-size: 10px !important;
+                   max-width: 70px !important;
+                   padding-left: 5px !important;
+                   padding-right: 5px !important;
+                   text-align: center;}  
+        .table-content{
+                   padding-left: 15px !important;
+                   margin-left: 0px !important;
+                   border-right: 0px !important;
+        }
+    }
+    /** custom css
+    ---------------------------------**/
+    /** custom css
+    ---------------------------------**/
+    ul.social-menu li{display:inline;}
+    ul.social-menu img{max-width:8%;}
+    </style>
+  </head>
+  <body class="">
+    <table border="0" cellpadding="0" cellspacing="0" class="body">
+      <tr>
+        <td>&nbsp;</td>
+        <td class="container">
+          <div class="content">
+
+            <!-- START CENTERED WHITE CONTAINER -->
+            <!--<span class="preheader">This is preheader text. Some clients will show this text as a preview.</span>-->
+            <table class="main">
+
+              <!-- START MAIN CONTENT AREA -->
+              <tr>
+                <td class="wrapper">
+                <!-- Start of First Row -->
+                  <table border="0" cellpadding="0" cellspacing="0" class="row-1">
+                    <tr>
+                      <td id="home-banner">
+            					      <a href="http://nprdesign.com/training/" target="_blank"><img src="img/banner.png"></a>
+            					</td>
+                    </tr>
+                    <tr>
+                      <td id="home-title" style="text-align:center;"><h3 style="letter-spacing: 1px;font-weight: bold;border-bottom: 1px solid;padding: 10px;margin-bottom:10px;color:#33aba9;">SOCIAL MEDIA & CONTENT MARKETING CERTICATE COURSE</h3></td>
+                    </tr>
+                  </table>
+
+                  <!-- Start of Second Row -->
+                  <table border="0" cellpadding="0" cellspacing="0" class="row-2">
+                    <tr>
+                      <td>
+                        <table border="0" cellpadding="0" cellspacing="0" class="row-2">
+                          <tr>
+                            <td style="text-align: center;padding: 10px;">
+                              <h3 style="margin-bottom:15px;font-weight: 700;letter-spacing: 1px;">Who can do this course?</h3>
+                              <table border="0" cellpadding="0" cellspacing="0" class="row-4">
+                                <tr>
+                                  <td width="30%">
+                                    <ul class="table-content" style="text-align:left;padding-left:15px;border-right:1px solid gainsboro;">
+                                      <li>Entrepreneurs</li>
+                                      <li>Fresh graduates</li>
+                                      <li>Industry professionals</li>
+                                    </ul>
+                                  </td>
+                                  <td width="30%">
+                                    <ul class="table-content" style="text-align:left;border-right:1px solid gainsboro;">
+                                      <li>Career evolvers</li>
+                                      <li>Digital marketers</li>
+                                      <li>Digital sellers</li>
+                                    </ul>
+                                  </td>
+                                  <td width="30%">
+                                    <ul class="table-content" style="text-align:left;">
+                                      <li>Sales Professionals</li>
+                                      <li>Digital marketeers</li>
+                                      <li>Senior management</li>
+                                    </ul>
+                                  </td>
+                                </tr>
+                              </table>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- End of Second Row -->
+
+                  <!-- Start of Third Row -->
+                  <table border="0" cellpadding="0" cellspacing="0" class="row-3" style="margin-bottom: 35px;border-bottom: 1px solid gainsboro;">
+                    <tr>
+                      <td class="table-range" width="25%" style="padding:10px;"><h4 style="background: #044666;margin:0;text-align: center;padding: 10px 5px;  color: #fff;text-transform: uppercase;"> <b>5 &nbsp;&nbsp;&nbsp; Weeks</b></h4></td>
+                      <td class="table-range" width="25%" style="padding:10px;"><h4 style="background: #044666;margin:0;text-align: center;padding: 10px 5px;  color: #fff;text-transform: uppercase;"><b>10 Modules</b></h4></td>
+                      <td class="table-range" width="25%" style="padding:10px;"><h4 style="background: #044666;margin:0;text-align: center;padding: 10px 5px;  color: #fff;text-transform: uppercase;"><b>10 Sessions</b></h4></td>
+                      <td class="table-range" width="25%" style="padding:10px;"><h4 style="background: #044666;margin:0;text-align: center;padding: 10px 5px;  color: #fff;text-transform: uppercase;"><b>Rs. 10,000 *</b></h4></td>
+                    </tr>
+                  </table>
+                  <!-- End of Thrid Row-->
+
+                  <!-- Start of Fourth Row -->
+                  <!--<table border="0" cellpadding="0" cellspacing="0" class="row-4">
+                    <tr>
+                      <td>
+
+                      </td>
+                    </tr>
+                  </table>-->
+                  <!-- End of Fourth Row -->
+
+                  <!-- Start of Fourth Row -->
+                  <table border="0" cellpadding="0" cellspacing="0" class="row-5">
+                    <tr>
+                      <td style="text-align:center;">
+                          <!--<h3 style="font-size: 17px;margin-top: 20px;letter-spacing: 1px;text-transform: uppercase;font-weight: bold;">Modules</h3>-->
+                          <span class="web-title"><a href="http://nprdesign.com/training/#module" target="_blank" style="padding: 10px;background: #32bcb6;text-decoration: none;letter-spacing: 1px;text-transform: capitalize;border-radius: 50px;  color: #fff;">Click here to view Modules</a></span>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- End of Fourth Row -->
+
+                  <!-- Start of Fifth Row -->
+                  <table border="0" cellpadding="0" cellspacing="0" class="row-6" style="margin-top: 30px;border-top: 1px solid gainsboro;padding-top: 10px;">
+                    <tr>
+                      <td style="text-align:center;padding-bottom:10px;">
+                        <h3 style="margin: 10px;text-align: center;font-weight: bold;letter-spacing:1px;">Location</h3>
+                        <span id="location-text">Office no. 401, Stanford Plaza, Off New Link Road, Next to Oberoi Springs,<br/> Andheri (West), Mumbai, Maharashtra 400053</span>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <h3 style="margin: 10px;text-align: center;font-weight: bold;letter-spacing:1px;">Batch Details</h3>
+                        <table border="0" cellpadding="0" cellspacing="0" class="row-4" style="margin-bottom:20px;">
+                          <tr>
+                            <td width="50%" style="border-right:1px solid gainsboro;padding:0px 5px;text-align:center;background: #32bcb6;color: #fff;">
+                                <h4 style="margin:10px;color:#fff;text-align: center;letter-spacing: 1px;padding: 0px 0px 10px;border-bottom: 1px solid gainsboro;">Batch One</h4>
+                                <p>Starts on 20th October 2016<br>till 24th November&nbsp;2016<br>10 am to 12 noon<br>(Tuesday &amp; Thursday)</p>
+                            </td>
+                            <td width="50%" style="padding:0px 5px;text-align:center;background: #227a8e;color: #fff;">
+                                <h4 style="margin:10px;color:#fff;text-align: center;letter-spacing: 1px;padding: 0px 0px 10px;border-bottom: 1px solid gainsboro;">Batch Two</h4>
+                                <p>Starts on 19th October 2016<br>till 23th November&nbsp;2016<br>5 pm to 7 pm<br>(Monday and Wednesday)</p>
+                            </td>
+                          </tr>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- End of Fifth Row -->
+
+                  <!-- Start of Sixth Row -->
+                  <table border="0" cellpadding="0" cellspacing="0" class="row-4">
+                    <tr>
+                      <td style="text-align:center;padding-bottom:20px;">
+                        <h3 style="margin:10px;text-align: center;font-weight: bold;letter-spacing:1px;">Trainer</h3>
+                        <a href="http://nprdesign.com/training/#traine" target="_blank"><img src="img/trainer.jpg" alt="" style="width:20%;border-radius:50%;margin-bottom:20px;margin-right:20px;"/></a>
+                        <a href="http://nprdesign.com/training/#enquiry-form" target="_blank"><img src="img/enquir.png" alt="" style="width:20%;border-radius:50%;margin-bottom:20px;"/></a><br/>
+                        <span class="web-title"><a class="web-details" href="http://nprdesign.com/training/#traine" target="_blank" style="padding: 10px 50px;border:1px solid;text-decoration: none;letter-spacing: 1px;text-transform: capitalize;color: #000;">Click to know more about <b>Nitin Raghani</b></a></span>
+                      </td>
+                    </tr>
+                  </table>
+                  <table>
+                    <tr>
+                      <h3 style="margin:10px;text-align: center;font-weight: bold;letter-spacing:1px;">Testimonials</h3>
+                      <td>
+                        <iframe width="100%" height="150" src="https://www.youtube.com/embed/5BI1SiW_5xM" frameborder="0" allowfullscreen></iframe>
+                      </td>
+                      <td>
+                        <iframe width="100%" height="150" src="https://www.youtube.com/embed/znnmHCx7TNs" frameborder="0" allowfullscreen></iframe>
+                      </td>
+                      <td>
+                        <iframe width="100%" height="150" src="https://www.youtube.com/embed/fvWTVKoKJSQ" frameborder="0" allowfullscreen></iframe>
+                      </td>
+                    </tr>
+                  </table>
+                  <!-- End of Sixth Row -->
+
+
+
+
+                  <!-- Footer Social Icons -->
+                  <table border="0" cellpadding="0" cellspacing="0" class="row-3">
+                    <tr>
+                      <td style="background:#d6d6d6;padding:20px;">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                          <tbody>
+                            <tr>
+                              <td style="padding:0;">
+                              <!-- Content -->
+                                <ul class="social-menu" style="list-style:none;text-align:center;margin:0;padding:0;">
+                                  <li><a href="#" target="_blank"><img src="img/facebook.png"></a></li>
+                                  <li><a href="#" target="_blank"><img src="img/twitter.png"></a></li>
+                                  <li><a href="#" target="_blank"><img src="img/instagram.png"></a></li>
+                                  <li><a href="#" target="_blank"><img src="img/linkedin.png"></a></li>
+                                </ul>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </td>
+                    </tr>
+                  </table>
+
+                </td>
+              </tr>
+
+              <!-- END MAIN CONTENT AREA -->
+              </table>
+
+            <!-- START FOOTER -->
+            <div class="footer">
+              <table border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                  <td class="content-block">
+                      <span class="company-address">NPR Design, Office no. 401, Stanford Plaza, Off New Link Road, Next to Oberoi Springs,<br/>
+Andheri (West), Mumbai, Maharashtra 400053</span><br/>
+                      <span class="address-url"><a href="http://nprdesign.com" target="_blank">http://nprdesign.com</a></span>
+                  </td>
+                </tr>
+              </table>
+            </div>
+
+            <!-- END FOOTER -->
+
+<!-- END CENTERED WHITE CONTAINER --></div>
+        </td>
+        <td>&nbsp;</td>
+      </tr>
+    </table>
+  </body>
+</html>
